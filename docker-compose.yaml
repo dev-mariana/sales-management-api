@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  pg:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker@123
+      - POSTGRESQL_DATABASE=sales-management
+    volumes:
+      - pg_data:/var/lib/pg/data
+
+volumes:
+  pg_data:
