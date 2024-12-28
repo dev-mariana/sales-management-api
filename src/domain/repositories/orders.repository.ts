@@ -1,5 +1,6 @@
-import type { Order, Prisma } from "@prisma/client";
+import type { Order } from "@prisma/client";
+import type { CreateOrderInput } from "./inputs/create-order-input";
 
 export interface IOrdersRepository {
-  create(data: Prisma.OrderCreateInput): Promise<Order>;
+  create(data: CreateOrderInput): Promise<Order>;
 }
