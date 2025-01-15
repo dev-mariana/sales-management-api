@@ -21,6 +21,7 @@ export async function createOrder(
       z.object({
         quantity: z.number(),
         price: z.number(),
+        product_id: z.string(),
       })
     ),
   });
@@ -36,11 +37,16 @@ export async function createOrder(
       status: body.status as OrderStatus,
       paymentDate: body.payment_date,
       totalAmount: body.total_amount,
-      items: body.items,
+      items: body.items.map((item) => ({
+        quantity: item.quantity,
+        price: item.price,
+        productId: item.product_id,
+      })),
     });
 
     return reply.code(201).send({ id: orderId });
   } catch (error) {
+    console.error(error);
     reply.code(500).send({ message: "Internal server error" });
   }
 }

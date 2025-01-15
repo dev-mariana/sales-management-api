@@ -8,5 +8,6 @@ export interface CreateOrderInput {
   items: {
     quantity: number;
     price: number;
+    product: string;
   }[];
 }

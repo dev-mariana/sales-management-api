@@ -15,6 +15,7 @@ export class OrdersRepository implements IOrdersRepository {
           create: data.items?.map((item) => ({
             quantity: item.quantity,
             price: item.price,
+            product: { connect: { id: item?.product } },
           })),
         },
       },

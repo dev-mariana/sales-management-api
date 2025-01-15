@@ -8,5 +8,6 @@ export interface CreateOrderRequest {
   items: {
     quantity: number;
     price: number;
+    productId: string;
   }[];
 }

@@ -10,7 +10,11 @@ export class CreateOrderService {
       status: data.status,
       paymentDate: data?.paymentDate,
       totalAmount: data.totalAmount,
-      items: data.items,
+      items: data.items.map((item) => ({
+        quantity: item.quantity,
+        price: item.price,
+        product: item.productId,
+      })),
     });
 
     return id;
