@@ -11,7 +11,7 @@ model Customers {
   id         String    @id @default(uuid())
   name       String
   phone      String
-  orders     Order[]
+  // orders     Order[]
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
 
@@ -25,8 +25,8 @@ model Order {
   requested_by String
   total_amount Float
   items        OrderItem[]
-  customer_id  String
-  customer     Customers   @relation(fields: [customer_id], references: [id], onDelete: Cascade)
+  // customer_id  String
+  // customer     Customers   @relation(fields: [customer_id], references: [id], onDelete: Cascade)
   created_at   DateTime    @default(now())
   updated_at   DateTime?   @updatedAt
 
