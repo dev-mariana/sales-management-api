@@ -22,4 +22,18 @@ export class ProductsRepository implements IProductsRepository {
 
     return product;
   }
+
+  async findMany(): Promise<Product[]> {
+    const products = await prisma.product.findMany({
+      include: {
+        items: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
+
+    return products;
+  }
 }
