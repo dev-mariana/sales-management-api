@@ -1,4 +1,5 @@
 import type { CreateProductInput } from "@/domain/repositories/inputs/create-product-input";
+import { UpdateProductInput } from "@/domain/repositories/inputs/update-product-input";
 import type { IProductsRepository } from "@/domain/repositories/products.repository";
 import type { Product } from "@prisma/client";
 import { prisma } from "../index";
@@ -49,6 +50,17 @@ export class ProductsRepository implements IProductsRepository {
           },
         },
       },
+    });
+
+    return product;
+  }
+
+  async update(id: string, data: UpdateProductInput): Promise<Product> {
+    const product = await prisma.product.update({
+      where: {
+        id,
+      },
+      data,
     });
 
     return product;
