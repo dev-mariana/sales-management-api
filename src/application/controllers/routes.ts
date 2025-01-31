@@ -1,10 +1,10 @@
 import type { FastifyInstance } from "fastify";
-import { createOrder } from "./create-order.controller";
-import { createProduct } from "./create-product.controller";
-import { deleteProduct } from "./delete-product.controller";
-import { getProduct } from "./get-product.controller";
-import { getProducts } from "./get-products.controller";
-import { updateProduct } from "./update-product.controller";
+import { createOrder } from "./orders/create-order.controller";
+import { createProduct } from "./products/create-product.controller";
+import { deleteProduct } from "./products/delete-product.controller";
+import { getProduct } from "./products/get-product.controller";
+import { getProducts } from "./products/get-products.controller";
+import { updateProduct } from "./products/update-product.controller";
 
 export async function appRoutes(app: FastifyInstance) {
   app.post("/orders", createOrder);
