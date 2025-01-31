@@ -1,3 +1,4 @@
+import cors from "@fastify/cors";
 import fastify from "fastify";
 import { ZodError } from "zod";
 import { ordersRoutes } from "./application/controllers/orders/routes";
@@ -5,6 +6,7 @@ import { productsRoutes } from "./application/controllers/products/routes";
 
 export const app = fastify();
 
+app.register(cors);
 app.register(productsRoutes, { prefix: "/api" });
 app.register(ordersRoutes, { prefix: "/api" });
 
