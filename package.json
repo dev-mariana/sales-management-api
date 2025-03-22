@@ -7,7 +7,9 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev"
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:deploy": "prisma migrate deploy"
   },
   "keywords": [],
   "author": "Mariana Bastos",
@@ -24,7 +26,6 @@
   "dependencies": {
     "@fastify/cors": "^10.0.2",
     "@prisma/client": "^6.1.0",
-    "@vercel/node": "^2.3.0",
     "dotenv": "^16.4.7",
     "fastify": "^5.2.1",
     "tsup": "^8.4.0",
