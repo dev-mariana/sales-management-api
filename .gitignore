@@ -1,7 +1,12 @@
+# Application dependencies
 node_modules
 
 # Keep environment variables out of version control
 .env
+.env.production
+
+# Mac OS X Finder files
 .DS_Store
 
+# App build files
 build
