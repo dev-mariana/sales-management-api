@@ -9,8 +9,8 @@
   ],
   "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/build/server.js"
+      "src": "/(.*)",
+      "dest": "/build/server.js"
     }
   ]
 }
