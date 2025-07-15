@@ -1,5 +1,5 @@
 import type { CreateProductInput } from "@/domain/repositories/inputs/create-product-input";
-import { UpdateProductInput } from "@/domain/repositories/inputs/update-product-input";
+import type { UpdateProductInput } from "@/domain/repositories/inputs/update-product-input";
 import type { IProductsRepository } from "@/domain/repositories/products.repository";
 import type { Product } from "@prisma/client";
 import { prisma } from "../index";
